@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { Context } from "../store/appContext";
+import { Context } from ".../store/appContext";
 
 import "../../styles/demo.css";
 
@@ -26,33 +26,51 @@ export const NewContact = () => {
 
 	return (
 		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
-							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
-								<p style={{ color: item.initial }}>
-									Check store/flux.js scroll to the actions to see the code
-								</p>
-							) : null}
-							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-								Change Color
-							</button>
-						</li>
-					);
-				})}
-			</ul>
-			<br />
+			<h1>Create a New Contact</h1>
+			<div>
+				<label>Name</label>
+				<input type="text"
+				placeholder="Enter Name"
+				value={addContact.name}
+				onChange={handleOnChange}>
+				</input>
+			</div>
+			<div>
+				<label>Address</label>
+				<input type="text"
+				placeholder="Enter Address"
+				value={addContact.address}
+				onChange={handleOnChange}>
+				</input>
+			</div>
+			<div>
+				<label>Phone Number</label>
+				<input type="text"
+				placeholder="Phone number"
+				value={addContact.phone}
+				onChange={handleOnChange}>
+				</input>
+			</div>
+			<div>
+				<label>Email</label>
+				<input type="text"
+				placeholder="Email Address"
+				value={addContact.email}
+				onChange={handleOnChange}>
+				</input>
+			</div>
 			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
+				<button 
+				className="btn btn-primary"
+				onClick={createContact}>
+					Save contact
+				</button>
+			</Link>
+			<Link to="/">
+				<button 
+				className="btn btn-primary">
+					or get back to contact list
+				</button>
 			</Link>
 		</div>
 	);
