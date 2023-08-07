@@ -5,8 +5,24 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const Demo = () => {
+export const NewContact = () => {
 	const { store, actions } = useContext(Context);
+	const [addContact, setAddContact] = useState ({
+		name: "",
+		address: "",
+		phone: "",
+		email: "",
+		avatar: "",
+		});
+	
+	const handleOnChange = (e) => {
+		const {name, value} = e.target;
+		setAddContact({...addContact, [name]: value})
+	};
+
+	const createContact = () => {
+		actions.saveAddContact (addContact);
+	}
 
 	return (
 		<div className="container">

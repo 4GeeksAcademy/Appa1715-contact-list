@@ -26,3 +26,5 @@ const Card = ({ contact }) => {
 		</div>
 	)
 };
+
+export default Card;
