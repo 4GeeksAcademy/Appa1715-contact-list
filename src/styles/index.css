@@ -1,3 +1,16 @@
 /* 
     General Styles
 */
+.image-profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 10px 40px 10px 30px;
+
+}
+.text-description p{
+    margin: 0px;
+    color: gray;
+    font-size: 1rem;
+    
+}

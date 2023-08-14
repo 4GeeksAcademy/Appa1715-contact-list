@@ -38,6 +38,7 @@ export const Demo = () => {
 								placeholder="Enter name..."
 								id="name"
 								onChange={changeContact}></input>
+								
 							</div>
 							<div className="col">
 								<label className="form-label">Last name</label>

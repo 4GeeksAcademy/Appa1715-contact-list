@@ -1,94 +1,61 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-
+import { Link } from "react-router-dom";
  const EditContact = ({contact}) => {
-	const { actions } = useContext(Context);
-	const [editInfo, setEditInfo]= useState({ ...contact});
 
-	const handleChange = (e) => {
-		const {name, value} = e.target;
-		setEditInfo((prevState)=>({
-			...prevState,
-			[name]: value,
-		}));
-	};
-	const save = () => {
-		actions.saveInfo(editInfo)
-	};
-	const deleteInfoContact = () => {
-		actions.deleteInfo(contact.id)
-	};
 
-	
 	return (
-		<div>
-			<h1 className="display-4">Add Contact Information</h1>
+		<div className="container">
+			<h3>Edit contact info</h3>
 			<form>
-			<div className="mb-3">
-				<label htmlFor="name" className="form-label">
-					Full Name
-				</label>
-				<input
-            		type="text"
-            		className="form-control"
-            		id="name"
-            		name="name"
-            		value={editInfo.name}
-            		onChange={handleChange}
-          		/>
-			</div>
-			<div className="mb-3">
-				<label htmlFor="address" className="form-label">
-					Address
-				</label>
-				<input
-            		type="text"
-            		className="form-control"
-            		id="Address"
-            		name="Address"
-            		value={editInfo.address}
-            		onChange={handleChange}
-          		/>
-			</div>
-			<div className="mb-3">
-				<label htmlFor="phone" className="form-label">
-					Phone Number
-				</label>
-				<input
-            		type="text"
-            		className="form-control"
-            		id="phone"
-            		name="phone"
-            		value={editInfo.phone}
-            		onChange={handleChange}
-          		/>
-			</div>
-			<div className="mb-3">
-				<label htmlFor="email" className="form-label">
-					Email
-				</label>
-				<input
-            		type="text"
-            		className="form-control"
-            		id="email"
-            		name="email"
-            		value={editInfo.email}
-            		onChange={handleChange}
-          		/>
-			</div>
-			<button
-          		type="button"
-          		className="btn btn-primary me-4 mb-3"
-          		onClick={save}>
-          		Save Changes
-        	</button>
-        	<button
-          		type="button"
-          		className="btn btn-secondary mb-3"
-          		onClick={deleteInfoContact}>
-					Cancel
-				</button>
+				<div className="the-add mb-3">
+					<div className="mb-3">
+						<div className="row">
+							<div className="col">
+								<label className="form-label">Name</label>
+								<input type="text" 
+								className="form-control" 
+								placeholder="Enter name..."></input>
+								
+							</div>
+							<div className="col">
+								<label className="form-label">Last name</label>
+								<input type="text" 
+								className="form-control" 
+								placeholder="Enter last..."
+								></input>
+							</div>
+						</div>
+					</div>
+					<div className="mb-3">
+						<label className="form-label">Email Address</label>
+						<input type="text" 
+						className="form-control" 
+						placeholder="Enter email..."
+						></input>
+					</div>
+					<div className="mb-3">
+						<label className="form-label">Phone Number</label>
+						<input type="text" 
+						className="form-control"
+						placeholder="Enter phone nu..." 
+						></input>
+					</div>
+					<div className="mb-3">
+						<label htmlFor="exampleInputtext1" className="form-label">Address</label>
+						<input type="text" 
+						className="form-control" 
+						placeholder="Enter addre..."
+						></input>
+					</div>
+					<button className="btn btn-primary ">Submit</button>
+					<Link to="/">
+							<button className="btn btn-secondary ">Cancel</button>
+					</Link>
+  								
+				</div>
 			</form>
+			
 		</div>
 	);
 };

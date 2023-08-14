@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			contact: [
 				{
 					id: 1,
-					Name: "Kristel Ester",
+					name: "Kristel Ester",
 					lastName: "Corrales Granados",
 					email: "kris.corrales08@gmail.com",
 					phone: "+506 8894 0467",
@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 2,
-					Name: "Steve Alonso",
+					name: "Steve Alonso",
 					lastName: "Ramírez Bonilla",
 					email: "alonbo30@gmail.com",
 					phone: "+506 8669 7618",
@@ -20,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 3,
-					Name: "Carlos",
+					name: "Carlos",
 					lastName: "Calderón Zapata",
 					email: "charliebrown1875@gmail.com",
 					phone: "+506 8364 0095",
@@ -28,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 4,
-					Name: "Coline Stacy",
+					name: "Coline Stacy",
 					lastName: "Marin Chinchilla",
 					email: "cmarin@gmail.com",
 					phone: "+506 8562 1538",
